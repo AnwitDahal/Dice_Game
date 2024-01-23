@@ -3,7 +3,7 @@ import Keys from './Keys'
 import Score from './Score'
 
 
-function ScoreKeys({selval,setSelVal,scoreV,error,setError}) {
+function ScoreKeys({selval,setSelVal,scoreV,error,setError,Hell}) {
 
 
 
@@ -13,6 +13,7 @@ function ScoreKeys({selval,setSelVal,scoreV,error,setError}) {
       <Keys selval={selval} setSelVal={setSelVal}
       error={error}
       setError={setError}
+      Hell={Hell}
       />
     </div>
   )

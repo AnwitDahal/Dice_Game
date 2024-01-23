@@ -12,21 +12,14 @@ function MainPage() {
   const [show, setShow] = useState(false);
 
   const Hell = () => {
-    if (selval === 0) {
-      setError("You have not selected any number");
+    let cumber = Math.floor(Math.random() * 6) + 1;
+    console.log(cumber);
+    SetDice(cumber);
+
+    if (cumber === selval) {
+      setScoreV((scoreV) => ++scoreV);
     } else {
-      setError("");
-      let cumber = Math.floor(Math.random() * 6) + 1;
-      console.log(cumber);
-      SetDice(cumber);
-
-      if (cumber === selval) {
-        setScoreV((scoreV) => ++scoreV);
-      } else {
-        setScoreV((scoreV) => scoreV + 0);
-      }
-
-      setSelVal(0);
+      setScoreV(0);
     }
   };
   const resetBut = () => {
@@ -42,8 +35,9 @@ function MainPage() {
         selval={selval}
         scoreV={scoreV}
         setScoreV={setScoreV}
+        Hell={Hell}
       />
-      <RollDice dice={dice} Hell={Hell} />
+      <RollDice dice={dice} />
       <div className="flex flex-col justify-center items-center mt-8">
         <ButtonClick
           text={"Reset Score"}
@@ -53,7 +47,7 @@ function MainPage() {
         <ButtonClick
           text={"Show Rules"}
           diff="bg-black text-white  active:bg-white  active:text-black"
-          onClick={()=>setShow(prev=>!prev)}
+          onClick={() => setShow((prev) => !prev)}
         >
           {show ? "Show" : "Hide"}
         </ButtonClick>
