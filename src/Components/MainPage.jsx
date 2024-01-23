@@ -21,7 +21,7 @@ function MainPage() {
       SetDice(cumber);
 
       if (cumber === selval) {
-        setScoreV((scoreV) => scoreV + cumber * 2);
+        setScoreV((scoreV) => ++scoreV);
       } else {
         setScoreV((scoreV) => scoreV + 0);
       }
