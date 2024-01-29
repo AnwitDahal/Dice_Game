@@ -12,16 +12,12 @@ function MainPage() {
   const [show, setShow] = useState(false);
 
   const Hell = () => {
-    let cumber = Math.floor(Math.random() * 6) + 1;
-    console.log(cumber);
-    SetDice(cumber);
-
-    if (cumber === selval) {
-      setScoreV((scoreV) => ++scoreV);
-    } else {
-      setScoreV(0);
-    }
+    let number = Math.floor(Math.random() * 6) + 1;
+    SetDice(number);
+    console.log(number)
   };
+
+
   const resetBut = () => {
     setScoreV(0);
   };

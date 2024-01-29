@@ -3,7 +3,7 @@ function Keys({ selval, setSelVal,Hell}) {
   const KeysVal = [1, 2, 3, 4, 5, 6];
   const selValHandler=(value)=>{
     setSelVal(value)
-    console.log(selval,value);
+    console.log(value)
     Hell();
   }
 
