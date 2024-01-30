@@ -1,10 +1,10 @@
 
-function Keys({ selval, setSelVal,Hell}) {
+function Keys({ selval, setSelVal,error,setError}) {
   const KeysVal = [1, 2, 3, 4, 5, 6];
   const selValHandler=(value)=>{
     setSelVal(value)
+    setError("");
     console.log(value)
-    Hell();
   }
 
   const diff = "bg-black text-white";
@@ -13,6 +13,7 @@ function Keys({ selval, setSelVal,Hell}) {
   return (
     <div className="flex flex-col items-end">
       <div className="text-red-500 text-xl mb-7">
+        {error}
       </div>
       <div>
         {KeysVal.map((value, index) => (

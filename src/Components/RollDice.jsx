@@ -1,5 +1,5 @@
 
-function RollDice({dice}) {
+function RollDice({dice,Hell}) {
 
   const num = `src/Images/DiceImages/dice_${dice}.svg`;
  
@@ -10,6 +10,8 @@ function RollDice({dice}) {
           src={num}
           alt=""
           className="scale-75 cursor-pointer"
+          onClick={Hell}
+
         />
       </div>
   );

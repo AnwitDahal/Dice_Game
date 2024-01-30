@@ -13,10 +13,20 @@ function MainPage() {
 
   const Hell = () => {
     let number = Math.floor(Math.random() * 6) + 1;
-    SetDice(number);
-    console.log(number)
+    if (selval === 0) {
+      setError("Here");
+    } else {
+      setError();
+      SetDice(number);
+      console.log(number);
+      if (selval === number) {
+        setScoreV(100);
+      } else {
+        setScoreV(1);
+      }
+    }
+    setSelVal(0)
   };
-
 
   const resetBut = () => {
     setScoreV(0);
@@ -33,7 +43,7 @@ function MainPage() {
         setScoreV={setScoreV}
         Hell={Hell}
       />
-      <RollDice dice={dice} />
+      <RollDice dice={dice} Hell={Hell} />
       <div className="flex flex-col justify-center items-center mt-8">
         <ButtonClick
           text={"Reset Score"}
